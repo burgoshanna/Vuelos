@@ -66,7 +66,7 @@ public class Reservacion {
         this.esInternacional = esInternacional;
     }
 
-}
+
 
 // Clase que gestiona los vuelos
 class GestionVuelos {
@@ -85,6 +85,7 @@ class GestionVuelos {
         }
         return resultados;
     }
+}
 
 public class Main {
     public static void main(String[] args) {
