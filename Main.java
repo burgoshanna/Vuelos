@@ -40,7 +40,7 @@ class Vuelo {
 
 }
 
-public class Pasajero {
+class Pasajero {
     private String nombre;
     private String apellido;
 
@@ -56,9 +56,14 @@ public class Pasajero {
     }
 }
 
-public class Reservacion {
+class Reservacion {
     private Pasajero pasajero;
     private Vuelo vuelo;
+    private String origen;
+    private String destino;
+    private String horaSalida;
+    private String horaLlegada;
+    private boolean esInternacional;
 
     public Reservacion(Pasajero pasajero, String origen, String destino, String horaSalida, String horaLlegada, boolean esInternacional) {
         this.pasajero = pasajero;
@@ -69,11 +74,34 @@ public class Reservacion {
         this.horaLlegada = horaLlegada;
         this.esInternacional = esInternacional;
     }
-}
 
-public Reservacion(Pasajero pasajero, String origen, String destino, String horaSalida, String horaLlegada, boolean esInternacional) {
-    this.pasajero = pasajero;
-    this.vuelo = new Vuelo(origen, destino, horaSalida, horaLlegada, esInternacional);
+    public Pasajero getPasajero() {
+        return pasajero;
+    }
+
+    public Vuelo getVuelo() {
+        return vuelo;
+    }
+
+    public String getOrigen() {
+        return origen;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public String getHoraSalida() {
+        return horaSalida;
+    }
+
+    public String getHoraLlegada() {
+        return horaLlegada;
+    }
+
+    public boolean esInternacional() {
+        return esInternacional;
+    }
 }
 
 // Clase que gestiona los vuelos
@@ -94,7 +122,7 @@ class GestionVuelos {
         return resultados;
     }
 }
-public class Main {
+public class Main { 
     public static void main(String[] args) {
         GestionVuelos gestionVuelos = new GestionVuelos();
         Scanner scanner = new Scanner(System.in);
