@@ -15,15 +15,15 @@ class Vuelo {
     }
 
     public String getOrigen() {
-        return origen;
+        return origen.toString();
     }
 
     public String getDestino() {
-        return destino;
+        return origen.toString();
     }
 
     public String getHoraSalida() {
-        return horaSalida;
+        return origen.toString();
     }
 }
 
