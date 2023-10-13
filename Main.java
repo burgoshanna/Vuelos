@@ -85,7 +85,6 @@ class GestionVuelos {
         }
         return resultados;
     }
-}
 
 public class Main {
     public static void main(String[] args) {
