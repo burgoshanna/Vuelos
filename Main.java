@@ -7,11 +7,15 @@ class Vuelo {
     private String origen;
     private String destino;
     private String horaSalida;
+    private String horaLlegada;
+    private boolean esInternacional;
 
-    public Vuelo(String origen, String destino, String horaSalida) {
+    public Vuelo(String origen, String destino, String horaSalida, String horaLlegada, boolean esInternacional) {
         this.origen = origen;
         this.destino = destino;
         this.horaSalida = horaSalida;
+        this.horaLlegada = horaLlegada;
+        this.esInternacional = esInternacional;
     }
 
     public String getOrigen() {
@@ -25,6 +29,43 @@ class Vuelo {
     public String getHoraSalida() {
         return origen.toString();
     }
+
+    public String getHoraLlegada() {
+        return origen.toString();
+    }
+
+    public boolean esInternacional() {
+        return esInternacional;
+    }
+
+}
+
+public class Pasajero {
+    private String nombre;
+    private String apellido;
+}
+
+public Pasajero (String nombre, String apellido) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+
+    public String getNombre() {
+        return nombre.toString();
+    }
+    public String getApellido() {
+        return apellido.toString();
+    }
+}
+
+public class Reservacion {
+    private Pasajero pasajero;
+        this.origen = origen;
+        this.destino = destino;
+        this.horaSalida = horaSalida;
+        this.horaLlegada = horaLlegada;
+        this.esInternacional = esInternacional;
+    }
+
 }
 
 // Clase que gestiona los vuelos
