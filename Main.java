@@ -107,7 +107,8 @@ public class Main {
         String origen = scanner.nextLine();
         System.out.print("Ingrese destino del vuelo: ");
         String destino = scanner.nextLine();
-
+        scanner.close();
+        
         List<Vuelo> resultados = gestionVuelos.buscarVuelos(origen, destino);
         if (resultados.isEmpty()) {
             System.out.println("No se encontraron vuelos de " + origen + " a " + destino);
