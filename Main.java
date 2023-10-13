@@ -19,71 +19,6 @@ class Vuelo {
     }
 
     public String getOrigen() {
-        return origen.toString();
-    }
-
-    public String getDestino() {
-        return destino.toString();
-    }
-
-    public String getHoraSalida() {
-        return horaSalida.toString();
-    }
-
-    public String getHoraLlegada() {
-        return horaLlegada.toString();
-    }
-
-    public boolean esInternacional() {
-        return esInternacional;
-    }
-
-}
-
-class Pasajero {
-    private String nombre;
-    private String apellido;
-
-    public Pasajero (String nombre, String apellido) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-    }
-    String getNombre() {
-        return nombre.toString();
-    }
-    public String getApellido() {
-        return apellido.toString();
-    }
-}
-
-class Reservacion {
-    private Pasajero pasajero;
-    private Vuelo vuelo;
-    private String origen;
-    private String destino;
-    private String horaSalida;
-    private String horaLlegada;
-    private boolean esInternacional;
-
-    public Reservacion(Pasajero pasajero, String origen, String destino, String horaSalida, String horaLlegada, boolean esInternacional) {
-        this.pasajero = pasajero;
-        this.vuelo = new Vuelo(origen, destino, horaSalida, horaLlegada, esInternacional);
-        this.origen = origen;
-        this.destino = destino;
-        this.horaSalida = horaSalida;
-        this.horaLlegada = horaLlegada;
-        this.esInternacional = esInternacional;
-    }
-
-    public Pasajero getPasajero() {
-        return pasajero;
-    }
-
-    public Vuelo getVuelo() {
-        return vuelo;
-    }
-
-    public String getOrigen() {
         return origen;
     }
 
@@ -101,6 +36,42 @@ class Reservacion {
 
     public boolean esInternacional() {
         return esInternacional;
+    }
+}
+
+class Pasajero {
+    private String nombre;
+    private String apellido;
+
+    public Pasajero(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+}
+
+class Reservacion {
+    private Pasajero pasajero;
+    private Vuelo vuelo;
+
+    public Reservacion(Pasajero pasajero, Vuelo vuelo) {
+        this.pasajero = pasajero;
+        this.vuelo = vuelo;
+    }
+
+    public Pasajero getPasajero() {
+        return pasajero;
+    }
+
+    public Vuelo getVuelo() {
+        return vuelo;
     }
 }
 
@@ -122,14 +93,15 @@ class GestionVuelos {
         return resultados;
     }
 }
-public class Main { 
+
+public class Main {
     public static void main(String[] args) {
         GestionVuelos gestionVuelos = new GestionVuelos();
         Scanner scanner = new Scanner(System.in);
 
         // Agregar algunos vuelos
-        gestionVuelos.agregarVuelo(new Vuelo("Nueva York", "Los Ángeles", "08:00 AM"));
-        gestionVuelos.agregarVuelo(new Vuelo("Chicago", "Miami", "10:30 AM"));
+        gestionVuelos.agregarVuelo(new Vuelo("Nueva York", "Los Ángeles", "08:00 AM", "10:00 AM", true));
+        gestionVuelos.agregarVuelo(new Vuelo("Chicago", "Miami", "10:30 AM", "12:30 PM", false));
 
         System.out.print("Ingrese origen del vuelo: ");
         String origen = scanner.nextLine();
@@ -147,3 +119,4 @@ public class Main {
         }
     }
 }
+
