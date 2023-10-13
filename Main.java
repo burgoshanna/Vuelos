@@ -23,15 +23,15 @@ class Vuelo {
     }
 
     public String getDestino() {
-        return origen.toString();
+        return destino.toString();
     }
 
     public String getHoraSalida() {
-        return origen.toString();
+        return horaSalida.toString();
     }
 
     public String getHoraLlegada() {
-        return origen.toString();
+        return horaLlegada.toString();
     }
 
     public boolean esInternacional() {
@@ -43,13 +43,12 @@ class Vuelo {
 public class Pasajero {
     private String nombre;
     private String apellido;
-}
 
-public Pasajero (String nombre, String apellido) {
-    this.nombre = nombre;
-    this.apellido = apellido;
-
-    public String getNombre() {
+    public Pasajero (String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+    String getNombre() {
         return nombre.toString();
     }
     public String getApellido() {
@@ -59,13 +58,22 @@ public Pasajero (String nombre, String apellido) {
 
 public class Reservacion {
     private Pasajero pasajero;
+    private Vuelo vuelo;
+
+    public Reservacion(Pasajero pasajero, String origen, String destino, String horaSalida, String horaLlegada, boolean esInternacional) {
+        this.pasajero = pasajero;
+        this.vuelo = new Vuelo(origen, destino, horaSalida, horaLlegada, esInternacional);
         this.origen = origen;
         this.destino = destino;
         this.horaSalida = horaSalida;
         this.horaLlegada = horaLlegada;
         this.esInternacional = esInternacional;
     }
+}
 
+public Reservacion(Pasajero pasajero, String origen, String destino, String horaSalida, String horaLlegada, boolean esInternacional) {
+    this.pasajero = pasajero;
+    this.vuelo = new Vuelo(origen, destino, horaSalida, horaLlegada, esInternacional);
 }
 
 // Clase que gestiona los vuelos
@@ -85,7 +93,7 @@ class GestionVuelos {
         }
         return resultados;
     }
-
+}
 public class Main {
     public static void main(String[] args) {
         GestionVuelos gestionVuelos = new GestionVuelos();
